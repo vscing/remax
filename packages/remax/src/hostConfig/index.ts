@@ -1,10 +1,10 @@
 import * as scheduler from 'scheduler';
-import shallowequal from 'shallowequal';
-import { REMAX_METHOD, TYPE_TEXT } from './constants';
-import { generate } from './instanceId';
-import VNode from './VNode';
-import Container from './Container';
-import { createCallbackProxy } from './SyntheticEvent';
+import { REMAX_METHOD, TYPE_TEXT } from '../constants';
+import { generate } from '../instanceId';
+import VNode from '../VNode';
+import Container from '../Container';
+import { createCallbackProxy } from '../SyntheticEvent';
+import isPropsUpdate from './isPropsUpdate';
 
 const {
   unstable_scheduleCallback: scheduleDeferredCallback,
@@ -100,7 +100,7 @@ export default {
   prepareUpdate(node: VNode, type: string, oldProps: any, newProps: any) {
     oldProps = processProps(oldProps, node.container, node.id);
     newProps = processProps(newProps, node.container, node.id);
-    if (!shallowequal(newProps, oldProps)) {
+    if (!isPropsUpdate(newProps, oldProps)) {
       return true;
     }
     return null;
