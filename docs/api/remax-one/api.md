@@ -14,7 +14,7 @@ _带有 `?` 的选项表示非必填项_
 import { navigateTo } from 'remax/one';
 
 navigateTo({
-  url: 'pages/index/index',
+  url: '/pages/index/index',
 });
 ```
 
@@ -54,7 +54,7 @@ navigateBack();
 import { redirectTo } from 'remax/one';
 
 redirectTo({
-  url: 'pages/index/index',
+  url: '/pages/index/index',
 });
 ```
 
@@ -75,7 +75,7 @@ redirectTo({
 import { reLaunch } from 'remax/one';
 
 reLaunch({
-  url: 'pages/index/index',
+  url: '/pages/index/index',
 });
 ```
 
@@ -96,7 +96,7 @@ reLaunch({
 import { switchTab } from 'remax/one';
 
 switchTab({
-  url: 'pages/index/index',
+  url: '/pages/index/index',
 });
 ```
 
